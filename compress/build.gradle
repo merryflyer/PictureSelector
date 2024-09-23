@@ -5,7 +5,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
+//        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
     }
 }
 
@@ -24,9 +24,9 @@ android {
     }
 }
 
-ext {
-    PUBLISH_ARTIFACT_ID = "compress"
-}
+//ext {
+//    PUBLISH_ARTIFACT_ID = "compress"
+//}
 
 apply from: '../publish.gradle'
 

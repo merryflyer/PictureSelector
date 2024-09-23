@@ -1,4 +1,4 @@
-apply plugin: 'maven-publish'
+/*apply plugin: 'maven-publish'
 apply plugin: 'signing'
 
 Properties localProperties = new Properties()
@@ -152,4 +152,4 @@ publishing {
 
 signing {
     sign publishing.publications
-}
+}*/
