@@ -25,6 +25,7 @@ class CustomGestureDetector {
     private final float mTouchSlop;
     private final float mMinimumVelocity;
     private OnGestureListener mListener;
+    private int mPointerCount = 0;
 
     CustomGestureDetector(Context context, OnGestureListener listener) {
         final ViewConfiguration configuration = ViewConfiguration
@@ -88,7 +89,8 @@ class CustomGestureDetector {
     }
 
     public boolean isScaling() {
-        return mDetector.isInProgress();
+        return mPointerCount >1;
+//        return mDetector.isInProgress();
     }
 
     public boolean isDragging() {
@@ -191,7 +193,7 @@ class CustomGestureDetector {
                 }
                 break;
         }
-
+        mPointerCount = ev.getPointerCount();
         mActivePointerIndex = ev
                 .findPointerIndex(mActivePointerId != INVALID_POINTER_ID ? mActivePointerId
                         : 0);
